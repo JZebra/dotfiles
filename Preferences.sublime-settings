@@ -1,0 +1,78 @@
+{
+	"anaconda_linter_mark_style": "none",
+	"anaconda_linter_phantoms": true,
+	"binary_file_patterns":
+	[
+		"generated/*",
+		"*.tbz2",
+		"*.gzip",
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip"
+	],
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"complete_all_parameters": true,
+	"enable_signatures_tooltip": true,
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace"
+	],
+	"folder_exclude_patterns":
+	[
+		"node_modules",
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"__pycache__"
+	],
+	"font_size": 10,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"index_files": true,
+	"merge_signatures_and_doc": true,
+	"rulers":
+	[
+		80
+	],
+	"save_on_focus_lost": true,
+	"show_full_path": true,
+	"translate_tabs_to_spaces": true,
+	"trim_automatic_white_space": true,
+	"trim_trailing_white_space_on_save": true,
+	"validate_imports": true
+}
