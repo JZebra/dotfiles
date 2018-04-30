@@ -85,21 +85,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom functions
 
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-export WORKON_HOME=$HOME/.virtualenvs
-pyenv virtualenvwrapper
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-
-# workaround for matplotlib graphing
-# http://matplotlib.org/faq/virtualenv_faq.html
-function frameworkpython {
-    if [[ ! -z "$VIRTUAL_ENV" ]]; then
-        PYTHONHOME=$VIRTUAL_ENV /usr/bin/python "$@"
-    else
-        /usr/local/bin/python "$@"
-    fi
-}
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -148,3 +133,4 @@ alias geth_mine="geth console --nodiscover --mine --minerthreads=1 --etherbase=0
 
 # everlane
 source ~/.everlane
+alias rc_admin='heroku run rails c --app=everlane-admin'
