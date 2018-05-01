@@ -96,8 +96,6 @@ source $ZSH/oh-my-zsh.sh
 
 # system
 alias ll="ls -lah"
-alias venv ="virtualenv"
-alias venv activate="virtualenv bin/activate"
 alias sa="source activate"
 
 # git
@@ -111,19 +109,10 @@ alias gcom="git checkout master"
 alias gs="git status"
 alias pick="git cherry-pick"
 
-# shadowverse-api
-alias sapi="source ~/.virtualenvs/shadowverse-api/bin/activate && cd ~/src/shadowverse-api"
-
 # benjamin
-# activates python venv, moves to folder"
-alias ben="source ~/.virtualenvs/benjamin/bin/activate && cd ~/src/benjamin"
 alias flow="./node_modules/.bin/flow"
 
-# coding_challenges
-alias cc="cd ~/src/coding_challenges && source ~/.virtualenvs/coding_challenges/bin/activate"
-
 # ether_bet
-alias eb="cd ~/src/ether_bet && source ~/.virtualenvs/ether_bet/bin/activate"
 # alias geth_start="geth console --unlock 0 --rpc --rpcapi "eth, net, web3" --rpccorsdomain "*" --etherbase=0x0000000000000000000000000000000000000000"
 alias geth_mine="geth console --nodiscover --mine --minerthreads=1 --etherbase=0x0000000000000000000000000000000000000000"
 
