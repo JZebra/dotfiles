@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/johnshen/.oh-my-zsh
@@ -112,9 +112,11 @@ alias flow="./node_modules/.bin/flow"
 alias geth_mine="geth console --nodiscover --mine --minerthreads=1 --etherbase=0x0000000000000000000000000000000000000000"
 
 # asdf version control
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
 
 # everlane
 source ~/.everlane
 alias rc_admin='heroku run rails c --app=everlane-admin'
+alias ss='script/start -c 3'
+alias stw='script/test watch'
