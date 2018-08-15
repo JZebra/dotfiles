@@ -101,6 +101,7 @@ alias gl="git log"
 alias gco="git checkout"
 alias gcom="git checkout master"
 alias gs="git status"
+alias gd="git diff"
 alias pick="git cherry-pick"
 
 # benjamin
