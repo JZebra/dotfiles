@@ -83,10 +83,6 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # system
 alias ll="ls -lah"
@@ -100,9 +96,11 @@ alias gpr="git pull upstream master"
 alias gl="git log"
 alias gco="git checkout"
 alias gcom="git checkout master"
+alias gprm="git checkout master && git pull && git checkout - && git rebase master"
 alias gs="git status"
 alias gd="git diff"
 alias pick="git cherry-pick"
+alias clean_branches="for branch in \$(git branch --merged); do; git branch -d \"\$branch\"; done"
 
 # benjamin
 alias flow="./node_modules/.bin/flow"
@@ -120,3 +118,9 @@ source ~/.everlane
 alias rc_admin='heroku run rails c --app=everlane-admin'
 alias ss='script/start -c 3'
 alias stw='script/test watch'
+alias ytw='yarn test --watch'
+alias hra='heroku repo:gc --app=everlane-admin && heroku repo:purge_cache --app=everlane-admin'
+alias hrp='heroku repo:gc --app=everlane && heroku repo:purge_cache --app=everlane'
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
