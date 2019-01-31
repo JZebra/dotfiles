@@ -84,6 +84,12 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# yarn global path
+export PATH="$(yarn global bin):$PATH"
+
+# local script path
+export PATH=~/src/bin:$PATH
+
 # system
 alias ll="ls -lah"
 alias be="bundle exec"
@@ -100,7 +106,7 @@ alias gprm="git checkout master && git pull && git checkout - && git rebase mast
 alias gs="git status"
 alias gd="git diff"
 alias pick="git cherry-pick"
-alias clean_branches="for branch in \$(git branch --merged); do; git branch -d \"\$branch\"; done"
+# alias clean_branches="for branch in \$(git branch --merged); do; git branch -d \"\$branch\"; done"
 
 # benjamin
 alias flow="./node_modules/.bin/flow"

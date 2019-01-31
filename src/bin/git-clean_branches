@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+
+# Use this to clean up local and remote branches. For example,
+# if you prefix all your branches with "frodo/",
+#
+# git checkout master
+# git delete-merged-branches-matching frodo
+
+unless ARGV.length == 1
+  puts "USAGE: git-delete-merged-branches-matching regex"
+  exit 1
+end
+
+current_branch = `git symbolic-ref --short HEAD.strip`
+target = Regexp.new(ARGV[0])
+
+`git branch -r --merged`.
+  split("\n").
+  map(&:strip).
+  map { |b| b.strip.sub(/^origin\//, '') }.
+  select { |b| b =~ target }.
+  reject { |b| b == current_branch }.
+  each do |b|
+    `git push origin :#{b}`
+    `git branch -r -d origin/#{b}`
+    puts "deleted remote branch #{b}"
+  end
+
+`git branch --merged`.
+  split("\n").
+  map(&:strip).
+  select { |b| b =~ target }.
+  reject { |b| b == current_branch }.
+  each do |b|
+    `git branch -d #{b}`
+    puts "deleted local branch #{b}"
+  end
