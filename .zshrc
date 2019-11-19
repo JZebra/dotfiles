@@ -102,11 +102,14 @@ alias gpr="git pull upstream master"
 alias gl="git log"
 alias gco="git checkout"
 alias gcom="git checkout master"
+alias grm="git rebase -i master"
+alias grc="git rebase --continue"
 alias gprm="git checkout master && git pull && git checkout - && git rebase master"
 alias gs="git status"
 alias gd="git diff"
 alias pick="git cherry-pick"
-# alias clean_branches="for branch in \$(git branch --merged); do; git branch -d \"\$branch\"; done"
+alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias clean_branches="for branch in \$(git branch --merged); do; git branch -d \"\$branch\"; done"
 
 # benjamin
 alias flow="./node_modules/.bin/flow"
@@ -122,11 +125,13 @@ source $HOME/.asdf/completions/asdf.bash
 # everlane
 source ~/.everlane
 alias rc_admin='heroku run rails c --app=everlane-admin'
-alias ss='script/start -c 3'
+alias ss='script/start -c2 -w'
 alias stw='script/test watch'
 alias ytw='yarn test --watch'
 alias hra='heroku repo:gc --app=everlane-admin && heroku repo:purge_cache --app=everlane-admin'
 alias hrp='heroku repo:gc --app=everlane && heroku repo:purge_cache --app=everlane'
+alias everlane_mix='bundle exec rake db:drop db:create db:schema:load mix util:create_review_app_users util:create_review_app_orders util:create_review_app_pos_roles'
+alias review_app_mix='heroku run bundle exec rake db:drop db:create db:schema:load mix util:create_review_app_users'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
