@@ -130,8 +130,8 @@ alias stw='script/test watch'
 alias ytw='yarn test --watch'
 alias hra='heroku repo:gc --app=everlane-admin && heroku repo:purge_cache --app=everlane-admin'
 alias hrp='heroku repo:gc --app=everlane && heroku repo:purge_cache --app=everlane'
-alias everlane_mix='bundle exec rake db:drop db:create db:schema:load mix util:create_review_app_users util:create_review_app_orders util:create_review_app_pos_roles'
-alias review_app_mix='heroku run bundle exec rake db:drop db:create db:schema:load mix util:create_review_app_users'
+alias everlane_mix='bundle exec rake db:drop db:create db:schema:load mix util:create_review_app_users util:create_review_app_orders util:create_review_app_pos_roles cache:schedule_collection_refresh util:prepare_reach_env'
+alias review_app_mix='heroku run bundle exec rake db:drop db:create db:schema:load mix util:create_review_app_users cache:schedule_collection_refresh util:prepare_reach_env'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
