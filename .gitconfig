@@ -4,7 +4,7 @@
 name = John Shen
 email = johnzhihaoshen@gmail.com
 [core]
-	excludesfile = /Users/johnshen/.gitignore_global
+	excludesfile = /Users/johnshen/.gitignore
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
