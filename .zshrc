@@ -121,6 +121,7 @@ alias geth_mine="geth console --nodiscover --mine --minerthreads=1 --etherbase=0
 # asdf version control
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # everlane
 source ~/.everlane
