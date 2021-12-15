@@ -10,3 +10,4 @@ ln -s ~/src/dotfiles/.zshrc ~/.zshrc
 ln -s dotfiles/.gitconfig .gitconfig
 ln -s dotfiles/.gitignore .gitignore
 ```
+NB: If your path has changed (i.e. because of a different username), update the paths in `.zshrc` 
