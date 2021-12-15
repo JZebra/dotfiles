@@ -802,7 +802,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/johnshen/src</string>
+			<string>/Users/john/src</string>
 		</dict>
 	</array>
 	<key>OnlyWhenMoreTabs</key>

@@ -2,8 +2,8 @@
 export PATH=/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/johnshen/.oh-my-zsh
-export GOPATH=/Users/johnshen/
+export ZSH=/Users/john/.oh-my-zsh
+export GOPATH=/Users/john/
 export PGDATA=/usr/local/var/postgres
 
 # Set name of the theme to load. Optionally, if you set this to "random"
