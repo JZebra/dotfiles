@@ -77,6 +77,9 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
+# env vars eg. NPM_TOKEN
+source ~/.env
+
 # Custom functions
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -111,8 +114,8 @@ alias pick="git cherry-pick"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias clean_branches="for branch in \$(git branch --merged); do; git branch -d \"\$branch\"; done"
 
-# benjamin
-alias flow="./node_modules/.bin/flow"
+# other aliases
+alias ytw='yarn test --watch'
 
 # ether_bet
 # alias geth_start="geth console --unlock 0 --rpc --rpcapi "eth, net, web3" --rpccorsdomain "*" --etherbase=0x0000000000000000000000000000000000000000"
@@ -128,7 +131,6 @@ source ~/.everlane
 alias rc_admin='heroku run rails c --app=everlane-admin'
 alias ss='script/start -c2 -w'
 alias stw='script/test watch'
-alias ytw='yarn test --watch'
 alias hra='heroku repo:gc --app=everlane-admin && heroku repo:purge_cache --app=everlane-admin'
 alias hrp='heroku repo:gc --app=everlane && heroku repo:purge_cache --app=everlane'
 alias everlane_mix='bundle exec rake db:drop db:create db:schema:load mix util:create_review_app_users util:create_review_app_orders util:create_review_app_pos_roles cache:schedule_collection_refresh util:prepare_reach_env'

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# zsh
+# TODO: add zprofile when we have one
+rm -rf ~/.zshrc
+ln -s ./zshrc ~/.zshrc
+
+# git
+rm -rf ~/.gitconfig \
+       ~/.gitignore
+ln -s ./git/gitconfig ~/.gitconfig
+ln -s ./git/gitignore ~/.gitignore
