@@ -53,7 +53,7 @@ ZSH_THEME="mortalscumbag"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages copydir history sublime rsync safe-paste docker github heroku vagrant npm)
+plugins=(git colored-man-pages copypath history sublime rsync safe-paste docker github heroku vagrant npm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -135,6 +135,7 @@ alias hra='heroku repo:gc --app=everlane-admin && heroku repo:purge_cache --app=
 alias hrp='heroku repo:gc --app=everlane && heroku repo:purge_cache --app=everlane'
 alias everlane_mix='bundle exec rake db:drop db:create db:schema:load mix util:create_review_app_users util:create_review_app_orders util:create_review_app_pos_roles cache:schedule_collection_refresh util:prepare_reach_env'
 alias review_app_mix='heroku run bundle exec rake db:drop db:create db:schema:load mix util:create_review_app_users cache:schedule_collection_refresh util:prepare_reach_env'
+alias start_workers='bundle exec foreman start --port 3000 --color --formation all=0,web=1,webpack=1,low=1'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
