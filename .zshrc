@@ -1,6 +1,25 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=/usr/local/bin:$PATH
 
+# add path to conda
+# export PATH="$HOME/miniconda3/bin:$PATH"  # commented out by conda initialize
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/john/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/john/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/john/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/john/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+# deactivate conda by default
+conda deactivate
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/john/.oh-my-zsh
 export GOPATH=/Users/john/
@@ -93,6 +112,11 @@ export PATH="$(yarn global bin):$PATH"
 # local script path
 export PATH=~/src/bin:$PATH
 
+# mysql2 gem
+# https://stackoverflow.com/questions/71565375/mysql2-gem-is-failing-following-a-macbookpro-os-upgrade
+export LDFLAGS="-L/opt/homebrew/lib $LDFLAGS"
+export CPPFLAGS="-I/opt/homebrew/include $CPPFLAGS"
+
 # system
 alias ll="ls -lah"
 alias be="bundle exec"
@@ -113,17 +137,17 @@ alias gd="git diff"
 alias pick="git cherry-pick"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias clean_branches="for branch in \$(git branch --merged); do; git branch -d \"\$branch\"; done"
+# - git branch | grep -v “main” |  grep -v “code-freeze-2022” | xargs git branch -D
 
-# other aliases
+# nodejs
 alias ytw='yarn test --watch'
 
-# ether_bet
-# alias geth_start="geth console --unlock 0 --rpc --rpcapi "eth, net, web3" --rpccorsdomain "*" --etherbase=0x0000000000000000000000000000000000000000"
-alias geth_mine="geth console --nodiscover --mine --minerthreads=1 --etherbase=0x0000000000000000000000000000000000000000"
+# python
+alias sd_start='cd ~/src/ml-stable-diffusion && conda activate coreml_stable_diffusion'
+export SD_SEED=1111
+alias sd_gen="python -m python_coreml_stable_diffusion.pipeline -i output -o image_outputs --compute-unit ALL --seed ${SD_SEED} --prompt"
 
 # asdf version control
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # everlane
@@ -131,11 +155,10 @@ source ~/.everlane
 alias rc_admin='heroku run rails c --app=everlane-admin'
 alias ss='script/start -c2 -w'
 alias stw='script/test watch'
-alias hra='heroku repo:gc --app=everlane-admin && heroku repo:purge_cache --app=everlane-admin'
-alias hrp='heroku repo:gc --app=everlane && heroku repo:purge_cache --app=everlane'
+# alias hra='heroku repo:gc --app=everlane-admin && heroku repo:purge_cache --app=everlane-admin'
+# alias hrp='heroku repo:gc --app=everlane && heroku repo:purge_cache --app=everlane'
 alias everlane_mix='bundle exec rake db:drop db:create db:schema:load mix util:create_review_app_users util:create_review_app_orders util:create_review_app_pos_roles cache:schedule_collection_refresh util:prepare_reach_env'
 alias review_app_mix='heroku run bundle exec rake db:drop db:create db:schema:load mix util:create_review_app_users cache:schedule_collection_refresh util:prepare_reach_env'
 alias start_workers='bundle exec foreman start --port 3000 --color --formation all=0,web=1,webpack=1,low=1'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
