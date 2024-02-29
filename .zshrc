@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=/usr/local/bin:$PATH
 
+# asdf version control
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
 # add path to conda
 # export PATH="$HOME/miniconda3/bin:$PATH"  # commented out by conda initialize
 # >>> conda initialize >>>
@@ -97,7 +100,6 @@ source $ZSH/oh-my-zsh.sh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # env vars eg. NPM_TOKEN
-source ~/.env
 
 # Custom functions
 
@@ -146,9 +148,6 @@ alias ytw='yarn test --watch'
 alias sd_start='cd ~/src/ml-stable-diffusion && conda activate coreml_stable_diffusion'
 export SD_SEED=1111
 alias sd_gen="python -m python_coreml_stable_diffusion.pipeline -i output -o image_outputs --compute-unit ALL --seed ${SD_SEED} --prompt"
-
-# asdf version control
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # everlane
 source ~/.everlane
