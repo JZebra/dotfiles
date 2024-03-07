@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # env vars eg. NPM_TOKEN
+source ~/.env
 
 # Custom functions
 
