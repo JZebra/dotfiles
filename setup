@@ -1,12 +1,18 @@
-#!/bin/sh
+#!/bin/bash
+
+set -e  # Exit immediately if any command fails
+
+SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 
 # zsh
-# TODO: add zprofile when we have one
+echo "Setting up .zshrc"
 rm -rf ~/.zshrc
-ln -s ./zshrc ~/.zshrc
+ln -s "$SCRIPT_DIR/.zshrc" ~/.zshrc
 
 # git
-rm -rf ~/.gitconfig \
-       ~/.gitignore
-ln -s ./git/gitconfig ~/.gitconfig
-ln -s ./git/gitignore ~/.gitignore
+echo "Setting up .gitconfig and .gitignore"
+rm -rf ~/.gitconfig ~/.gitignore
+ln -s "$SCRIPT_DIR/git/.gitconfig" ~/.gitconfig
+ln -s "$SCRIPT_DIR/git/.gitignore" ~/.gitignore
+
+echo "Setup complete!"
