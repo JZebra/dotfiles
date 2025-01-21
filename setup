@@ -12,10 +12,4 @@ echo "Setting up .zprofile"
 rm -rf ~/.zprofile
 ln -s "$SCRIPT_DIR/.zprofile" ~/.zprofile
 
-# git
-echo "Setting up .gitconfig and .gitignore"
-rm -rf ~/.gitconfig ~/.gitignore
-ln -s "$SCRIPT_DIR/git/.gitconfig" ~/.gitconfig
-ln -s "$SCRIPT_DIR/git/.gitignore" ~/.gitignore
-
 echo "Setup complete!"
