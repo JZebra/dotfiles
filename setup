@@ -8,6 +8,9 @@ SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 echo "Setting up .zshrc"
 rm -rf ~/.zshrc
 ln -s "$SCRIPT_DIR/.zshrc" ~/.zshrc
+echo "Setting up .zprofile"
+rm -rf ~/.zprofile
+ln -s "$SCRIPT_DIR/.zprofile" ~/.zprofile
 
 # git
 echo "Setting up .gitconfig and .gitignore"
